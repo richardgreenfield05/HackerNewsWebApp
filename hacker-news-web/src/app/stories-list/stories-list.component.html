@@ -1,1 +1,35 @@
-<p>stories-list works!</p>
+<div class="container">
+  <div class="stories-list">
+    <h2>Hacker News Stories</h2>
+    <table class="stories-table">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Story ID</th>
+        <th>Details</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let id of paginatedStoryIds; let i = index">
+        <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+        <td>{{ id }}</td>
+        <td><a href="#" (click)="onStoryClick(id)">View Details</a></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="pagination">
+      <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+    </div>
+  </div>
+
+  <div class="story-details" *ngIf="selectedStory">
+    <h3>Story Details</h3>
+    <div class="details-content">
+      <p><strong>ID:</strong> {{ selectedStory.id }}</p>
+      <p><strong>Title:</strong> {{ selectedStory.title }}</p>
+      <p><strong>URL:</strong> <a [href]="selectedStory.url" target="_blank">{{ selectedStory.url }}</a></p>
+    </div>
+  </div>
+</div>

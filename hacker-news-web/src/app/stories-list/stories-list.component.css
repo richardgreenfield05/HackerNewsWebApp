@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.stories-list, .story-details {
+  width: 50%;
+  padding: 10px;
+}
+
+.stories-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.stories-table th, .stories-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.stories-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.stories-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.stories-table a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.stories-table a:hover {
+  text-decoration: underline;
+}
+
+.pagination {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+.pagination span {
+  margin: 0 10px;
+}
+
+.story-details {
+  margin-top: 20px;
+}
+
+.details-content {
+  margin-top: 20px;
+}
